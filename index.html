@@ -28,6 +28,7 @@
             padding: 20px;
             background-color: #000000;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
         }
     
         img {
@@ -40,7 +41,7 @@
             top: 10px;
             right: 10px;
             padding: 10px 20px;
-            background-color: #336699;
+            background-color: #8012da;
             color: #FFFFFF;
             border: none;
             border-radius: 20px;
@@ -60,6 +61,26 @@
             position: absolute;
             opacity: 0; /* Start with opacity 0 */
             animation: emojiRain 2s linear infinite;
+        }
+
+        .collapsible-section {
+            cursor: pointer;
+            user-select: none;
+            background: linear-gradient(to right, #3f0086, #1800f1);
+            color: #FFFFFF;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: left;
+            outline: none;
+            width: 100%;
+            font-size: 17px
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
         }
     
         @keyframes emojiRain {
@@ -109,6 +130,13 @@
                 document.body.removeChild(emojiContainer);
             }, 2000);
         }
+
+        function toggleSection(button) {
+            const section = button.parentNode;
+            const content = section.querySelector(".content");
+
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
     </script>
         
     
@@ -132,30 +160,58 @@
     </section>
 
     <section>
-        <h2>My Work</h2>
-        <p>Encryption-Decryption</p>
-        <img src="encryption-decryption_project.py at main · JeroenVos106_encryption-decryption - Google Chrome 22_01_2024 13_29_35.png" alt="Encryption-Decryption">
-        <p>This was my final project for CS50P. The full details and the README are available on my GitHub account!</p>
-        <hr>
-        <p>My portfolio</p>
-        <img src="portfolio.html - 150855322 [Codespaces_ legendary trout] - Visual Studio Code 22_01_2024 13_32_28.png" alt="My-Portfolio">
-        <p>This is the portfolio you are looking at right now! And this is my first project in HTML. For the full code visit my Gitub account!</p>
-        <hr>
+        <button class="collapsible-section" onclick="toggleSection(this)">
+            My Work
+            <span class="arrow" style="margin-left: 700px;">↓</span>
+        </button>
+        <div class="content" id="myWork">
+            <h2>My Work</h2>
+            <p>Encryption-Decryption</p>
+            <img src="encryption-decryption_project.py at main · JeroenVos106_encryption-decryption - Google Chrome 22_01_2024 13_29_35.png" alt="Encryption-Decryption">
+            <p>This was my final project for CS50P. The full details and the README are available on my GitHub account!</p>
+            <hr>
+            <p>My portfolio</p>
+            <img src="portfolio.html - 150855322 [Codespaces_ legendary trout] - Visual Studio Code 22_01_2024 13_32_28.png" alt="My-Portfolio">
+            <p>This is the portfolio you are looking at right now! And this is my first project in HTML. For the full code visit my GitHub account!</p>
+            <hr>
+        </div>
     </section>
 
     <section>
-        <h2>My Expertises</h2>
+        <button class="collapsible-section" onclick="toggleSection(this)">
+            My Expertises
+            <span class="arrow" style="margin-left: 660px;">↓</span>
+        </button>
+        <div class="content" id="myExpertises">
+            <h2>My Expertises</h2>
+            <p>
+                <img src="kisspng-microsoft-azure-cloud-computing-google-cloud-platf-5c5970512ad5b9.7418082615493653291755.png" alt="Azure Logo" style="width: 20px; height: 20px; margin-right: 5px;">
+                Azure Fundamentals
+            </p>
 
-        <p>
-            <img src="kisspng-microsoft-azure-cloud-computing-google-cloud-platf-5c5970512ad5b9.7418082615493653291755.png" alt="Azure Logo" style="width: 20px; height: 20px; margin-right: 5px;">
-            Azure Fundamentals
-        </p>
+            <p>
+                <img src="c26a58af112f4cad08629893409f32c5.jpg" alt="Python Logo" style="width: 20px; height: 20px; margin-right: 5px;">
+                Python
+            </p>
+        </div>
+    </section>
 
-        <p>
-            <img src="c26a58af112f4cad08629893409f32c5.jpg" alt="Python Logo" style="width: 20px; height: 20px; margin-right: 5px;">
-            Python
-        </p>
+    <section>
+        <button class="collapsible-section" onclick="toggleSection(this)">
+            My Certificates
+            <span class="arrow" style="margin-left: 654px;">↓</span>
+        </button>
+        <div class="content" id="myCertificates">
+            <h2>My certificates</h2>
+            <p>
+                The first certificate I got was CS50P from Harvard through EDX. This program is what got me into coding and what taught me the fundamentals of programming
+                <img src="20240119_181707.jpg" alt="My-certificates">
+            </p>
 
+            <p>
+                I am planning and have planned a lot more certificates, but as of right now, I don't have any more to show.
+            </p>
+        </div>
     </section>
 
     <section>
