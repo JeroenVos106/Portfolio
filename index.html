@@ -103,12 +103,22 @@
     
     
     <script>
+        let clickCount = 0;
+
         function handleButtonClick() {
+            // increment click count
+            clickCount++;
+
             // Display "Hello" in the output section
             document.getElementById("output").innerText = "Hello";
     
             // Create emoji rain
             createEmojiRain();
+
+            // check for click count 50
+            if (clickCount >= 50){
+                displayStopSign();
+            }
         }
 
         function createEmojiRain() {
@@ -131,6 +141,10 @@
             }, 2000);
         }
 
+    function displayStopSign() {
+        // Replace the content with a big red "STOP" sign
+        document.body.innerHTML = '<div style="font-size: 5em; color: red; text-align: center; padding-top: 50vh;">STAHP🙅🏼‍♂️</div>';
+    }
         function toggleSection(button) {
             const section = button.parentNode;
             const content = section.querySelector(".content");
