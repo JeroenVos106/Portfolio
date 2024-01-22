@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #0066CC, #66FFCC);
+            color: #FFFFFF;
+            position: relative;
+        }
+
+        header {
+            background-color: #000000;
+            color: #336699;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #000000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .press-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #336699;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+            .emoji-rain {
+                position: absolute;
+                animation: emojiRain 2s linear infinite;
+            }
+
+        @keyframes emojiRain {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jeroen Vos</h1>
+        <p>Beginner Programmer | Student</p>
+    </header>
+
+    <button class="press-button" onclick="handleButtonClick()">Press me</button>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Welcome to my portfolio! I am a beginning Developer/Programmer. I'm building this website to get familiar with
+            HTML and Azure. I will expand this Portfolio with the knowledge i gain during my career. Stay tuned!
+        </p>
+    </section>
+
+    <section>
+        <h2>My Work</h2>
+        <p>Encryption-Decryption</p>
+        <img src="encryption-decryption_project.py at main · JeroenVos106_encryption-decryption - Google Chrome 22_01_2024 13_29_35.png" alt="Encryption-Decryption">
+        <p>This was my final project for CS50P. The full details and the README are available on my GitHub account!</p>
+        <hr>
+        <p>My portfolio</p>
+        <img src="portfolio.html - 150855322 [Codespaces_ legendary trout] - Visual Studio Code 22_01_2024 13_32_28.png" alt="My-Portfolio">
+        <p>This is the portfolio you are looking at right now! And this is my first project in HTML. For the full code visit my Gitub account!</p>
+        <hr>
+    </section>
+
+    <section>
+        <h2>My Expertises</h2>
+
+        <p>
+            <img src="kisspng-microsoft-azure-cloud-computing-google-cloud-platf-5c5970512ad5b9.7418082615493653291755.png" alt="Azure Logo" style="width: 20px; height: 20px; margin-right: 5px;">
+            Azure Fundamentals
+        </p>
+
+        <p>
+            <img src="c26a58af112f4cad08629893409f32c5.jpg" alt="Python Logo" style="width: 20px; height: 20px; margin-right: 5px;">
+            Python
+        </p>
+
+    </section>
+
+    <section>
+        <h2>My Accounts and Contact Info</h2>
+        <p>Email: jeroen.vos106@gmail.com</p>
+        <p>Github: <a href="https://github.com/ninja2002vw">https://github.com/ninja2002vw</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/jeroenvos106">https://www.linkedin.com/in/jeroenvos106</a></p>
+        <p>Leetcode: <a href="https://leetcode.com/jeroen_408/">https://leetcode.com/jeroen_408/</a></p>
+        <p>Mobile: +31615676814</p>
+    </section>
+
+    <script>
+        function createEmojiRain() {
+            const emojiContainer = document.createElement("div");
+            emojiContainer.classList.add("emoji-rain");
+
+            for (let i = 0; i < 10; i++) {
+                const emoji = document.createElement("span");
+                emoji.innerHTML = "😁";
+                emoji.style.fontSize = `${Math.random() * 2 + 1}em`;
+                emoji.style.left = `${Math.random() * 100}vw`;
+                emojiContainer.appendChild(emoji);
+            }
+
+            document.body.appendChild(emojiContainer);
+
+            setTimeout(() => {
+                document.body.removeChild(emojiContainer);
+            }, 2000);
+        }
+
+        function handleButtonClick() {
+            createEmojiRain();
+        }
+    </script>
+
+
+</body>
+
+</html>
