@@ -1,0 +1,92 @@
+body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #0066CC, #66FFCC);
+        color: #FFFFFF;
+        position: relative;
+    }
+
+    header {
+        background-color: #000000;
+        color: #336699;
+        text-align: center;
+        padding: 20px;
+    }
+
+    section {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #000000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .press-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        background-color: #8012da;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .emoji-rain-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+    }
+
+    .emoji-rain {
+        position: absolute;
+        opacity: 0; /* Start with opacity 0 */
+        animation: emojiRain 2s linear infinite;
+    }
+
+    .collapsible-section {
+        cursor: pointer;
+        user-select: none;
+        background: linear-gradient(to right, #3f0086, #1800f1);
+        color: #FFFFFF;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        text-align: left;
+        outline: none;
+        width: 100%;
+        font-size: 17px
+    }
+
+    .content {
+        display: none;
+        overflow: hidden;
+    }
+
+    @keyframes emojiRain {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(100vh);
+            opacity: 0;
+        }
+    }

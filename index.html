@@ -5,162 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom right, #0066CC, #66FFCC);
-            color: #FFFFFF;
-            position: relative;
-        }
-    
-        header {
-            background-color: #000000;
-            color: #336699;
-            text-align: center;
-            padding: 20px;
-        }
-    
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #000000;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-        }
-    
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    
-        .press-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 10px 20px;
-            background-color: #8012da;
-            color: #FFFFFF;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-    
-        .emoji-rain-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-        }
-    
-        .emoji-rain {
-            position: absolute;
-            opacity: 0; /* Start with opacity 0 */
-            animation: emojiRain 2s linear infinite;
-        }
-
-        .collapsible-section {
-            cursor: pointer;
-            user-select: none;
-            background: linear-gradient(to right, #3f0086, #1800f1);
-            color: #FFFFFF;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 5px;
-            text-align: left;
-            outline: none;
-            width: 100%;
-            font-size: 17px
-        }
-
-        .content {
-            display: none;
-            overflow: hidden;
-        }
-    
-        @keyframes emojiRain {
-            0% {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-    
-            25% {
-                opacity: 1;
-            }
-    
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-    </style>
-    
-    
-    
-    <script>
-        let clickCount = 0;
-
-        function handleButtonClick() {
-            // increment click count
-            clickCount++;
-
-            // Display "Hello" in the output section
-            document.getElementById("output").innerText = "Hello";
-    
-            // Create emoji rain
-            createEmojiRain();
-
-            // check for click count 50
-            if (clickCount >= 50){
-                displayStopSign();
-            }
-        }
-
-        function createEmojiRain() {
-            const emojiContainer = document.createElement("div");
-            emojiContainer.classList.add("emoji-rain-container");
-    
-            for (let i = 0; i < 10; i++) {
-                const emoji = document.createElement("span");
-                emoji.classList.add("emoji-rain");
-                emoji.innerHTML = "😁";
-                emoji.style.fontSize = `${Math.random() * 2 + 1}em`;
-                emoji.style.left = `${Math.random() * 100}vw`;
-                emojiContainer.appendChild(emoji);
-            }
-    
-            document.body.appendChild(emojiContainer);
-    
-            setTimeout(() => {
-                document.body.removeChild(emojiContainer);
-            }, 2000);
-        }
-
-    function displayStopSign() {
-        // Replace the content with a big red "STOP" sign
-        document.body.innerHTML = '<div style="font-size: 5em; color: red; text-align: center; padding-top: 50vh;">STAHP🙅🏼‍♂️</div>';
-    }
-        function toggleSection(button) {
-            const section = button.parentNode;
-            const content = section.querySelector(".content");
-
-            content.style.display = content.style.display === "block" ? "none" : "block";
-        }
-    </script>
-        
-    
+    <link rel="stylesheet" href="style.css">
 </head>
-
+    
 <body>
 
     <header>
-        <img src="pixlr-image-generator-cc9ed27b-5e29-4315-a9af-9795f1b420d9(3).png" alt="Logo" style="width: 50px; height: 50px; margin-right: 10px;">
-        <img src="DSC_0007.jpg" alt="Profile Picture" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; margin-right: 20px;">
+        <img id="logo" src="/Images/pixlr-image-generator-cc9ed27b-5e29-4315-a9af-9795f1b420d9(3).png" alt="Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+        <img src="/Images/DSC_0007.jpg" alt="Profile Picture" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; margin-right: 20px;">
         <h1>Jeroen Vos</h1>
         <p>Beginner Programmer | Student</p>
     </header>
@@ -171,7 +23,7 @@
         <h2>About Me</h2>
         <p>
             Welcome to my portfolio! I am a beginning Developer/Programmer. I'm building this website to get familiar with
-            HTML and Azure. I will expand this Portfolio with the knowledge i gain during my career. Stay tuned!
+            HTML, JavaScript and CSS. I will expand this Portfolio with the knowledge i gain during my career. Stay tuned!
         </p>
     </section>
 
@@ -183,11 +35,11 @@
         <div class="content" id="myWork">
             <h2>My Work</h2>
             <p>Encryption-Decryption</p>
-            <img src="encryption-decryption_project.py at main · JeroenVos106_encryption-decryption - Google Chrome 22_01_2024 13_29_35.png" alt="Encryption-Decryption">
+            <img src="/Images/encryption-decryption_project.py at main · JeroenVos106_encryption-decryption - Google Chrome 22_01_2024 13_29_35.png" alt="Encryption-Decryption">
             <p>This was my final project for CS50P. The full details and the README are available on my GitHub account!</p>
             <hr>
             <p>My portfolio</p>
-            <img src="portfolio.html - 150855322 [Codespaces_ legendary trout] - Visual Studio Code 22_01_2024 13_32_28.png" alt="My-Portfolio">
+            <img src="/Images/portfolio.html - 150855322 [Codespaces_ legendary trout] - Visual Studio Code 22_01_2024 13_32_28.png" alt="My-Portfolio">
             <p>This is the portfolio you are looking at right now! And this is my first project in HTML. For the full code visit my GitHub account!</p>
             <hr>
         </div>
@@ -201,12 +53,12 @@
         <div class="content" id="myExpertises">
             <h2>My Expertises</h2>
             <p>
-                <img src="kisspng-microsoft-azure-cloud-computing-google-cloud-platf-5c5970512ad5b9.7418082615493653291755.png" alt="Azure Logo" style="width: 20px; height: 20px; margin-right: 5px;">
+                <img src="/Images/kisspng-microsoft-azure-cloud-computing-google-cloud-platf-5c5970512ad5b9.7418082615493653291755.png" alt="Azure Logo" style="width: 20px; height: 20px; margin-right: 5px;">
                 Azure Fundamentals
             </p>
 
             <p>
-                <img src="c26a58af112f4cad08629893409f32c5.jpg" alt="Python Logo" style="width: 20px; height: 20px; margin-right: 5px;">
+                <img src="/Images/c26a58af112f4cad08629893409f32c5.jpg" alt="Python Logo" style="width: 20px; height: 20px; margin-right: 5px;">
                 Python
             </p>
         </div>
@@ -221,7 +73,7 @@
             <h2>My certificates</h2>
             <p>
                 The first certificate I got was CS50P from Harvard through EDX. This program is what got me into coding and what taught me the fundamentals of programming
-                <img src="20240119_181707.jpg" alt="My-certificates">
+                <img src="/Images/20240119_181707.jpg" alt="My-certificates">
             </p>
 
             <p>
@@ -234,29 +86,30 @@
         <h2>My Accounts and Contact Info</h2>
 
         <p>
-            <img src="Gmail-logo-design-on-transparent-background-PNG.png" alt="Gmail logo" style="width: 20px; height: 20px; margin-right: 5px;">
+            <img src="/Images/Gmail-logo-design-on-transparent-background-PNG.png" alt="Gmail logo" style="width: 20px; height: 20px; margin-right: 5px;">
             Gmail: jeroen.vos106@gmail.com
         </p>
         <p>
             <img src="transparent-github-icon-gloss-icon-media-icon-5d8af3a78d20a9.2253810515693874315781.png" alt="Github logo" style="width: 20px; height: 20px; margin-right: 5px;">
-            Github: <a href="https://github.com/ninja2002vw">https://github.com/JeroenVos106</a>
+            Github: <a href="https://github.com/ninja2002vw">https://github.com/ninja2002vw</a>
         </p>
         <p>
-            <img src="transparent-social-network-icon-linkedin-icon-5f54a550a6dfe7.8978092515993828646835.png" alt="Linkedin logo" style="width: 20px; height: 20px; margin-right: 5px;">  
+            <img src="/Images/transparent-social-network-icon-linkedin-icon-5f54a550a6dfe7.8978092515993828646835.png" alt="Linkedin logo" style="width: 20px; height: 20px; margin-right: 5px;">  
             LinkedIn: <a href="https://www.linkedin.com/in/jeroenvos106">https://www.linkedin.com/in/jeroenvos106</a>
         </p>
         <p>
-            <img src="kisspng-logo-number-product-brand-line-subarray-sum-equals-k-leetcode-5bf88f0f04b9f4.4180053615430162070194.png" alt="Leetcode logo" style="width: 20px; height: 20px; margin-right: 5px;">   
+            <img src="/Images/kisspng-logo-number-product-brand-line-subarray-sum-equals-k-leetcode-5bf88f0f04b9f4.4180053615430162070194.png" alt="Leetcode logo" style="width: 20px; height: 20px; margin-right: 5px;">   
             Leetcode: <a href="https://leetcode.com/jeroen_408/">https://leetcode.com/jeroen_408/</a>
         </p>
         <p>
-            <img src="kisspng-computer-icons-telephone-call-portable-network-gra-berbrick-bvs-armored-batman-4-antoinette-bou-5cdcfe69f40238.3358307415579869219995.png" alt="telephone logo" style="width: 20px; height: 20px; margin-right: 5px;">       
+            <img src="/Images/kisspng-computer-icons-telephone-call-portable-network-gra-berbrick-bvs-armored-batman-4-antoinette-bou-5cdcfe69f40238.3358307415579869219995.png" alt="telephone logo" style="width: 20px; height: 20px; margin-right: 5px;">       
             Mobile: +31615676814
         </p>
     </section>
 
     <!-- Display the output here -->
     <div id="output"></div>
+    <script src="script.js"></script>
 
 </body>
 
