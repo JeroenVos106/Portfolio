@@ -11,7 +11,7 @@ function handleButtonClick() {
     createEmojiRain();
 
     // check for click count 50
-    if (clickCount >= 50) {
+    if (clickCount >= 20) {
         displayStopSign();
     }
 }
